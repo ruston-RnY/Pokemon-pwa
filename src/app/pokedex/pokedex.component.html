@@ -1,0 +1,78 @@
+<mat-sidenav-container class="main-container">
+  <mat-toolbar color="primary" class="toolbar">
+    <span>Random Pokemon App</span>
+  </mat-toolbar>
+  <div class="app-content">
+    <div class="side-image">
+      <div class="img-content">
+        <img src="../../assets/img/poke-trainer.png" class="trainer-image" />
+        <h1>Gatcha...</h1>
+      </div>
+    </div>
+    <div class="wrap" [ngClass]="{ 'display-cs': randomPokemon }">
+      <img
+        src="../../assets/img/pokemon-pikachu.png"
+        class="pika-image-mobile"
+      />
+      <button mat-raised-button color="warn" (click)="getRandomPokemon()">
+        GET YOUR POKEMON
+      </button>
+      <mat-card class="pokemon-card" *ngIf="randomPokemon">
+        <img
+          class="pokemon-image"
+          src="https://raw.githubusercontent.com/jeethesh-kotian/Pokemon-GO-App-Assets-and-Images/master/PokemonModelsRenamed/{{
+            randomPokemon.Number
+          }}.png"
+          alt="Pokemon Image"
+          onerror="this.src='https://via.placeholder.com/350x150?text=Opps...'"
+        />
+        <div class="title">
+          <mat-card-title>{{ randomPokemon?.Name }}</mat-card-title>
+          <span>HP #{{ randomPokemon?.MaxHP }}</span>
+        </div>
+        <mat-card-content>
+          <div class="weight">
+            <p>Max Weight: {{ randomPokemon?.Weight.Maximum }}</p>
+            <p>Max Height: {{ randomPokemon?.Height.Maximum }}</p>
+          </div>
+          <p>{{ randomPokemon?.About }}</p>
+          <div class="special-attack">
+            <div class="ability">
+              <h4>Weakness :</h4>
+              <ul>
+                <li *ngFor="let item of randomPokemon?.Weaknesses">
+                  {{ item }},
+                </li>
+              </ul>
+            </div>
+            <div class="ability">
+              <h4>Resistant :</h4>
+              <ul>
+                <li *ngFor="let item of randomPokemon?.Resistant">
+                  {{ item }},
+                </li>
+              </ul>
+            </div>
+          </div>
+        </mat-card-content>
+        <mat-card-actions>
+          <mat-chip-list>
+            <mat-chip
+              *ngFor="let type of randomPokemon?.Types"
+              [color]="getColor(type)"
+              selected
+            >
+              {{ type }}
+            </mat-chip>
+          </mat-chip-list>
+        </mat-card-actions>
+      </mat-card>
+    </div>
+    <div class="side-image">
+      <div class="img-content">
+        <img src="../../assets/img/pokemon-pikachu.png" class="pika-image" />
+        <h1>Pika Pika !</h1>
+      </div>
+    </div>
+  </div>
+</mat-sidenav-container>

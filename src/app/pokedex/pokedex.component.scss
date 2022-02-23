@@ -1,0 +1,164 @@
+.main-container {
+  height: 100%;
+
+  .toolbar {
+    margin-bottom: 1rem;
+  }
+
+  .app-content {
+    height: calc(100vh - 75px);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 2vw;
+
+    @media (max-width: 768px) {
+      justify-content: center;
+    }
+
+    .wrap {
+      height: 100%;
+      display: flex;
+      position: relative;
+
+      &.display-cs {
+        display: unset;
+      }
+
+      .pika-image-mobile {
+        position: absolute;
+        width: 70%;
+        left: 50%;
+        top: 30%;
+        transform: translate(-50%, -50%);
+        @media (min-width: 768px) {
+          display: none;
+        }
+      }
+
+      button {
+        width: 100%;
+        margin: auto;
+      }
+
+      .pokemon-card {
+        max-width: 400px;
+        height: 85%;
+        overflow-y: auto;
+
+        &::-webkit-scrollbar {
+          width: 3px;
+        }
+
+        /* Track */
+        &::-webkit-scrollbar-track {
+          background: transparent;
+        }
+
+        /* Handle */
+        &::-webkit-scrollbar-thumb {
+          background: #968b47;
+          border-radius: 4px;
+        }
+
+        .title {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          margin-bottom: 10px;
+          span {
+            font-weight: 500;
+            font-style: italic;
+            color: #ffdf00;
+          }
+        }
+
+        .special-attack {
+          .ability {
+            margin-bottom: 10px;
+            h4 {
+              margin-bottom: 0;
+            }
+
+            ul {
+              list-style-type: none;
+              padding: 0;
+              margin: 0;
+              overflow: hidden;
+              li {
+                margin-right: 5px;
+                float: left;
+              }
+            }
+          }
+        }
+
+        .weight {
+          display: flex;
+
+          @media (max-width: 576px) {
+            display: block;
+            margin-bottom: 1rem;
+          }
+
+          p {
+            margin-right: 1rem;
+            margin-bottom: 0;
+            font-weight: 500;
+            color: #b6f41b;
+          }
+        }
+
+        .pokemon-image {
+          height: 220px;
+          width: 100%;
+          object-fit: scale-down;
+          margin-bottom: 10px;
+          background-color: #d9c3d4;
+        }
+      }
+
+      .mat-card-content {
+        margin-bottom: 0;
+      }
+    }
+
+    .side-image {
+      display: flex;
+      min-height: 340px;
+
+      @media (max-width: 768px) {
+        display: none;
+      }
+
+      .img-content {
+        width: 45%;
+        margin: auto auto 0;
+        h1 {
+          text-align: center;
+          color: #ffdf00;
+          font-weight: 500;
+          font-family: "Poppins";
+        }
+        .trainer-image {
+          width: 100%;
+          cursor: pointer;
+          transition: transform 0.5s;
+
+          &:hover {
+            transform: translateY(-5px);
+          }
+        }
+        .pika-image {
+          width: 60%;
+          cursor: pointer;
+          transition: transform 0.5s;
+
+          &:hover {
+            transform: translateY(-5px);
+          }
+        }
+      }
+    }
+  }
+}

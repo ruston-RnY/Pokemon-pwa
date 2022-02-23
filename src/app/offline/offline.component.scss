@@ -1,0 +1,35 @@
+.container {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  text-align: center;
+  background-color: #303030;
+
+  .content {
+    img {
+      margin: auto;
+      width: 70%;
+      transition: transform 1s;
+      animation: slow-jump 1000ms linear infinite;
+
+      @keyframes slow-jump {
+        0% {
+          transform: translateY(0);
+        }
+
+        100% {
+          transform: translateY(-5px);
+        }
+      }
+    }
+
+    h1 {
+      font-size: 2rem;
+      font-family: "Poppins";
+      font-weight: 500;
+      margin-top: 1rem;
+      color: #fff;
+    }
+  }
+}

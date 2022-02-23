@@ -1,0 +1,17 @@
+{
+  "name": "Pokedex App",
+  "short_name": "Pokedex App",
+  "theme_color": "#1976d2",
+  "background_color": "#fafafa",
+  "display": "standalone",
+  "scope": "./",
+  "start_url": "./",
+  "icons": [
+    {
+      "src": "assets/icons/pokeball.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable any"
+    }
+  ]
+}
