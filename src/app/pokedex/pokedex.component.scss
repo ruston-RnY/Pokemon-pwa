@@ -95,10 +95,10 @@
 
         .weight {
           display: flex;
+          margin-bottom: 1rem;
 
           @media (max-width: 576px) {
             display: block;
-            margin-bottom: 1rem;
           }
 
           p {
